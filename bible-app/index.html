@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bíblia Sagrada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://assets.mixkit.co/active_storage/sfx/2708/2708-preview.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="app">
+    <!-- Menu de seleção -->
+    <div id="menuScreen" class="screen">
+      <div class="menu-container">
+        <div class="app-header">
+          <h1>Bíblia Sagrada</h1>
+          <p class="subtitle">Escolha um livro para começar</p>
+        </div>
+
+        <div class="selection-area">
+          <div class="selection-group">
+            <label>Testamento</label>
+            <select id="testamentSelect">
+              <option value="">Selecione...</option>
+              <option value="Antigo">Antigo Testamento</option>
+              <option value="Novo">Novo Testamento</option>
+            </select>
+          </div>
+
+          <div class="selection-group">
+            <label>Livro</label>
+            <select id="bookSelect" disabled>
+              <option value="">Selecione um testamento primeiro</option>
+            </select>
+          </div>
+
+          <div class="selection-group">
+            <label>Capítulo</label>
+            <select id="chapterSelect" disabled>
+              <option value="">Selecione um livro primeiro</option>
+            </select>
+          </div>
+
+          <button id="readBtn" class="btn-primary" disabled>Ler</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tela de leitura -->
+    <div id="readScreen" class="screen hidden">
+      <div class="reader-header">
+        <button id="backBtn" class="btn-back">← Voltar</button>
+        <h2 id="readTitle">Carregando...</h2>
+        <div class="nav-buttons">
+          <button id="prevBtn" class="btn-nav">Anterior</button>
+          <button id="nextBtn" class="btn-nav">Próximo</button>
+        </div>
+      </div>
+
+      <div class="reader-content">
+        <div id="chapterText" class="chapter-text">
+          Carregando capítulo...
+        </div>
+      </div>
+
+      <div class="reader-footer">
+        <small id="reference"></small>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingScreen" class="screen hidden">
+      <div class="loader"></div>
+      <p>Carregando...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
